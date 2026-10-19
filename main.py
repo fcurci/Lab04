@@ -19,7 +19,7 @@ def main():
 
         if scelta == "1":
             nuovo_nome = input("Inserisci il nuovo nome del centro fieristico: ")
-            # TODO: Aggiorna il nome del centro fieristico
+            lingotto.nome_centro=nuovo_nome
 
         elif scelta == "2":
             file_path = "dati_lingotto.csv"
@@ -39,8 +39,10 @@ def main():
                 print(f"Errore: {e}")
 
         elif scelta == "4":
+            espositori_ordinati = lingotto.elenca_espositori()
             print("\n--- Elenco espositori ---")
-            lingotto.elenca_espositori()
+            for e in espositori_ordinati:
+                print(e)
 
         elif scelta == "5":
             stand_ordinati = lingotto.stand_ordinati_per_prezzo()
